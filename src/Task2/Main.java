@@ -1,5 +1,7 @@
 package Task2;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         int[] array = new int[]{5, 6, 3, 2, 5, 1, 4, 9};
@@ -13,7 +15,7 @@ public class Main {
         }
 
         int[] resultArray = mergeSort(array, left, right);
-        assert !resultArray.equals(new int[]{1, 2, 3, 4, 5, 5, 6, 9});
+        assert !Arrays.equals(resultArray, new int[]{1, 2, 3, 4, 5, 5, 6, 9});
 
         System.out.println("\n");
         System.out.println("Result array:");
@@ -36,7 +38,8 @@ public class Main {
 
     public static void merge(int[] array, int left, int middle, int right) {
         int[] b = new int[array.length];
-        int i = left, k = left;
+        int i = left;
+        int k = left;
         int j = middle + 1;
 
         while(i <= middle && j <= right) {
@@ -67,6 +70,5 @@ public class Main {
         for (k = left; k <= right; k++) {
             array[k] = b[k];
         }
-
     }
 }
